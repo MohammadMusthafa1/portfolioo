@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('/port1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 10, 0.5);
+      z-index: -1;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 32px rgba(0, 255, 255, 0.15), 0 0 40px rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      width: 90%;
+      max-width: 1000px;
+    }
+
+    h2 {
+      text-align: center;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #0088cc;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      transition: all 0.5s ease;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      text-align: center;
+      border-radius: 12px;
+      padding: 30px 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-shadow: 0 0 4px rgba(0, 255, 255, 0.3);
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    }
+
+    /* Hover effects with gradient colors */
+    .card:hover {
+      transform: scale(1.07);
+      color: #fff;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 50px rgba(0, 255, 255, 0.4);
+    }
+
+    .card:nth-child(1):hover {
+      background: linear-gradient(135deg, #2a08ea, #b7fc24);
+    }
+
+    .card:nth-child(2):hover {
+      background: linear-gradient(135deg, #00b4db, #0083b0);
+    }
+
+    .card:nth-child(3):hover {
+      background: linear-gradient(135deg, #f7971e, #ffd200);
+    }
+
+    .card:nth-child(4):hover {
+      background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    }
+
+    .card:nth-child(5):hover {
+      background: linear-gradient(135deg, #8ed5e3, #b621fe);
+    }
+
+    .card:nth-child(6):hover {
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
+    }
+
+    .btn-back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Back Button -->
+  <a class="btn btn-outline-light btn-back" href="../index.html">← Home</a>
+
+  <!-- Skills Section -->
+  <section class="glass">
+    <h2>My Skills</h2>
+    <div class="row row-cols-2 row-cols-md-3 g-4">
+      <div class="col"><div class="card">Java</div></div>
+      <div class="col"><div class="card">HTML & CSS</div></div>
+      <div class="col"><div class="card">JavaScript</div></div>
+      <div class="col"><div class="card">React.js</div></div>
+      <div class="col"><div class="card">MongoDB</div></div>
+      <div class="col"><div class="card">MySQL</div></div>
+    </div>
+  </section>
+
+</body>
+</html>

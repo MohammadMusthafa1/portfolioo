@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internship</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('/port1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 5, 5, 0.65); /* darker overlay */
+      z-index: -1;
+    }
+
+    .glass {
+      background: rgba(0, 0, 0, 0.5); /* darker glass background */
+      border-radius: 20px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 32px rgba(0, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 50px 30px;
+      max-width: 1100px;
+      margin: 90px auto;
+      animation: fadeIn 1s ease-out;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      text-shadow: 0 0 12px #00ffff, 0 0 20px #00d9ff;
+      font-weight: bold;
+    }
+
+    .timeline {
+      position: relative;
+      margin-left: 20px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .timeline-item {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 25px 30px;
+      width: 48%;
+      margin-bottom: 50px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+      transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-10px);
+      background: linear-gradient(145deg, rgba(0, 255, 255, 0.2), rgba(0, 128, 255, 0.2));
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.3), 0 0 30px rgba(192, 192, 192, 0.2);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      width: 20px;
+      height: 20px;
+      background: #00ffff;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 12px #00ffff;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      left: -38px;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 52%;
+    }
+
+    .timeline-item:nth-child(even)::before {
+      left: -38px;
+    }
+
+    .timeline-item h5 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-shadow: 0 0 4px #00ffff;
+      color: #ffffff;
+    }
+
+    .timeline-item p {
+      margin: 5px 0;
+      font-size: 0.95rem;
+      color: #f0f0f0;
+    }
+
+    .btn-back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 5;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-item {
+        width: 90% !important;
+        left: 20px !important;
+        margin-left: 20px;
+      }
+
+      .timeline-item::before {
+        left: -30px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <a class="btn btn-outline-light btn-back" href="../index.html">← Home</a>
+
+  <section class="glass text-white">
+    <h2>Internship Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h5>Web Developer Intern</h5>
+        <p><strong>Company:</strong> VaultOfCodes</p>
+        <p><strong>Duration:</strong> May 2024 – June 2024</p>
+        <p>Successfully developed responsive and visually appealing web pages using modern HTML, CSS, and JavaScript techniques. Enhanced user experience through sleek UI/UX design, SEO optimization, and interactive functionality for real-world projects.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h5>Full Stack Developer Intern</h5>
+        <p><strong>Company:</strong> Gigabyte Labs Private Limited</p>
+        <p><strong>Duration:</strong> February 2025 – May 2025</p>
+        <p>I built full-stack applications using the MERN stack—leveraging React.js for front-end, Node.js and Express for backend, and MongoDB for database operations. I also integrated PostgreSQL in multi-database projects, focusing on API development, dynamic UI, and deploying real-world responsive websites.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h5>Java Full Stack</h5>
+        <p><strong>Company:</strong>Wipro</p>
+        <p><strong>Duration:</strong> March 2024 – April 2024</p>
+        <p>Completed an online internship at Wipro where I received hands-on training in Java programming fundamentals and participated in assessments to evaluate core technical skills.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

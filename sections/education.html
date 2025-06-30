@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Education</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('/port1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 10, 0.5);
+      z-index: -1;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 32px rgba(0, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      margin: 80px auto;
+      max-width: 800px;
+    }
+
+    h2 {
+      text-align: center;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #0088cc;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 3px solid rgba(255, 255, 255, 0.4);
+      animation: growline 1s ease-in-out forwards;
+    }
+
+    @keyframes growline {
+      from { height: 0; opacity: 0; }
+      to   { height: 100%; opacity: 1; }
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 15px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -19px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      background: #00ffff;
+      border: 2px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00ffff;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(5px);
+    }
+
+    .timeline-item h5 {
+      font-weight: bold;
+      text-shadow: 0 0 6px rgba(0, 255, 255, 0.5);
+    }
+
+    .timeline-item .institution {
+      font-size: 1.05rem;
+      color: #ffddaa;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .timeline-item p {
+      font-style: italic;
+      margin-bottom: 0;
+      color: #ddd;
+    }
+
+    .btn-back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    @media (max-width: 600px) {
+      .glass {
+        padding: 25px 20px;
+      }
+      .timeline {
+        padding-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <a class="btn btn-outline-light btn-back" href="../index.html">← Home</a>
+
+  <section class="glass container text-white">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h5>Bachelor of Engineering in Computer Science</h5>
+        <div class="institution">St Joseph Engineering College Mangalore</div>
+        <p>2021 – 2025</p>
+      </div>
+      <div class="timeline-item">
+        <h5>Pre-University Course (Science)</h5>
+        <div class="institution">St Aloysius PU College Mangalore</div>
+        <p>2018 – 2020</p>
+      </div>
+      <div class="timeline-item">
+        <h5>SSLC (10th Grade)</h5>
+        <div class="institution">Best English Medium High School BC Road</div>
+        <p>2017 – 2018</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('/port1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(10, 10, 10, 0.6);
+      z-index: -1;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      max-width: 700px;
+      margin: 100px auto;
+    }
+
+    h2 {
+      text-align: center;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #0088cc;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    form label {
+      color: #fff;
+    }
+
+    .form-control {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: 0.3s;
+    }
+
+    .form-control:focus {
+      border-color: gold;
+      box-shadow: 0 0 10px gold;
+    }
+
+    .form-control:hover {
+      border-color: silver;
+      box-shadow: 0 0 10px silver;
+    }
+
+    #responseMsg {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+    }
+
+    .social-links a i {
+      font-size: 1.6rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-links a:hover i {
+      transform: scale(1.2);
+      color: gold;
+    }
+
+    .btn-back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+  <a class="btn btn-outline-light btn-back" href="../index.html">← Home</a>
+
+  <section class="glass container text-white">
+    <h2>Contact Me</h2>
+
+    <!-- Contact Form -->
+    <form id="contactForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required />
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-warning">Send Message</button>
+    </form>
+
+    <div id="responseMsg" class="mt-3 text-success"></div>
+
+    <!-- Social Media Links -->
+    <hr class="text-white" />
+    <div class="text-center mt-4">
+      <h4>Connect With Me</h4>
+      <div class="social-links mt-3">
+        <a href="https://wa.me/917411183429" class="text-success" target="_blank" title="WhatsApp">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/mohammad-musthafa-aa0b9729b" class="text-primary" target="_blank" title="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://github.com/MohammadMusthafa1" class="text-light" target="_blank" title="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const responseMsg = document.getElementById('responseMsg');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        responseMsg.textContent = 'Please fill all fields.';
+        responseMsg.style.color = '#ffdddd';
+        return;
+      }
+
+      // WhatsApp message format
+      const phone = '917411183429'; // <-- Replace with your actual number
+      const text = `Hello, I am ${name}%0AMy Email: ${email}%0AMessage: ${message}`;
+      const url = `https://wa.me/${phone}?text=${text}`;
+
+      window.open(url, '_blank'); // open WhatsApp with message
+      responseMsg.textContent = `Redirecting to WhatsApp...`;
+    });
+  </script>
+</body>
+</html>
